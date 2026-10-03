@@ -1,0 +1,24 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c11
+
+TARGET = ABC.exe
+
+OBJECTS = main.o big3.o fact.o pal.o
+
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(TARGET)
+
+main.o: main.c
+	$(CC) $(CFLAGS) -c main.c -o main.o
+
+big3.o: big3.c
+	$(CC) $(CFLAGS) -c big3.c -o big3.o
+
+fact.o: fact.c
+	$(CC) $(CFLAGS) -c fact.c -o fact.o
+
+pal.o: pal.c
+	$(CC) $(CFLAGS) -c pal.c -o pal.o
+
+clean:
+	rm -f *.o $(TARGET)
