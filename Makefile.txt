@@ -1,8 +1,7 @@
-CC = gcc
+CC = x86_64-w64-mingw32-gcc
 CFLAGS = -Wall -Wextra -std=c11
 
 TARGET = ABC.exe
-
 OBJECTS = main.o big3.o fact.o pal.o
 
 $(TARGET): $(OBJECTS)
@@ -21,5 +20,4 @@ pal.o: pal.c
 	$(CC) $(CFLAGS) -c pal.c -o pal.o
 
 clean:
-
 	rm -f *.o $(TARGET)
